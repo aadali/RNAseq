@@ -1,0 +1,6 @@
+.nextflow.log*
+*~
+/.nextflow
+/work
+/scripts/__pycache__
+./sample_info.csv
