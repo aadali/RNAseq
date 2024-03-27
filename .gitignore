@@ -4,7 +4,10 @@
 /work
 /scripts/__pycache__
 sample_info.csv
+gaopeng_smaples.csv
+comparisons.csv
 .RData
 /.idea
 /test_data
+test.nf
 
