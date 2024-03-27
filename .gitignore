@@ -3,4 +3,8 @@
 /.nextflow
 /work
 /scripts/__pycache__
-./sample_info.csv
+sample_info.csv
+.RData
+/.idea
+/test_data
+
