@@ -66,7 +66,7 @@ get_counts <- function(count_files, outdir, analysis_name) {
 #' @param analysis_name prefix name of output file
 #' read counts_df from get_counts, and calculate expression in place, 
 #' but rename the sample name with adding the __{method} suffix
-#' @return a tibble object of expresion whose colnames are c("Geneid", "Length", sample1__{method}, sample2__{method}, ...)
+#' @return a tibble object of expression whose colnames are c("Geneid", "Length", sample1__{method}, sample2__{method}, ...)
 get_and_save_expression <- function(counts_df, samples_df, method, outdir, analysis_name) {
     # colnames of counts_df: Geneid, Length, sample1, sample2, sample3...
     keep <- rowSums(counts_df[, 3:length(counts_df)] > 5) > 3
@@ -78,6 +78,9 @@ get_and_save_expression <- function(counts_df, samples_df, method, outdir, analy
     readr::write_tsv(expression, file.path(outdir, paste0(analysis_name, ".all.expression.tsv")))
     return(expression)
 }
+
+# make plot -------------------------------------------------------------------------------------------------------
+
 
 #' Title
 #'
@@ -175,6 +178,9 @@ plot <- function(expression,
     }
 }
 
+# main function ---------------------------------------------------------------------------------------------------
+
+
 main <- function() {
     args <- commandArgs(TRUE)
     samples <- args[1]
@@ -230,5 +236,9 @@ main <- function() {
         pca = TRUE
         )
 }
+
+
+# entry point -----------------------------------------------------------------------------------------------------
+
 
 main()
